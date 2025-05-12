@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", "sans-serif";
+  --font-mono: "JetBrains Mono", "monospace";
+
+  --color-coral: oklch(0.61 0.2082 22.24);
+  --color-brightblue: oklch(0.47 0.3023 270.4);
+  --color-darkblue: oklch(0.16 0.099 277.49);
+  --color-offwhite: oklch(0.98 0.0017 247.84);
+  --color-blueblack: oklch(0.19 0.004 286.01);
+}
