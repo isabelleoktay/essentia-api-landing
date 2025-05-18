@@ -4,9 +4,32 @@
   --font-sans: "Manrope", "sans-serif";
   --font-mono: "JetBrains Mono", "monospace";
 
-  --color-coral: oklch(0.61 0.2082 22.24);
-  --color-brightblue: oklch(0.47 0.3023 270.4);
-  --color-darkblue: oklch(0.16 0.099 277.49);
-  --color-offwhite: oklch(0.98 0.0017 247.84);
-  --color-blueblack: oklch(0.19 0.004 286.01);
+  --color-coral: oklch(0.61 0.2082 22.24); /* #e53845 */
+  --color-lightcoral: oklch(0.76 0.1406 16.06); /* #fe8a93 */
+  --color-offwhite: oklch(0.98 0.0017 247.84); /* #f7f8f9 */
+  --color-blueblack: oklch(0.19 0.004 286.01); /* #141416 */
+  --color-darkblue: oklch(0.16 0.099 277.49); /* #090036 */
+  --color-brightblue: oklch(0.47 0.3023 270.4); /* #320bff */
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-infinite-scroll {
+    animation: infinite-scroll 25s linear infinite;
+  }
 }

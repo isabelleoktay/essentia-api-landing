@@ -1,5 +1,5 @@
 const Text = ({ align = "center", children, className }) => {
-  const baseClasses = `text-base md:text-lg lg:text-xl font-mono text-gray-300`;
+  const baseClasses = `text-base md:text-lg lg:text-xl font-sans text-gray-300`;
   const alignClasses = {
     left: "text-left",
     center: "text-center",

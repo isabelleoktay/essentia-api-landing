@@ -7,7 +7,9 @@ const NavBar = ({ color = "default" }) => {
   };
 
   return (
-    <nav className={`fixed ${colorClasses[color]} font-sans w-full h-auto m-0`}>
+    <nav
+      className={`fixed ${colorClasses[color]} font-sans w-full h-auto m-0 transition-colors duration-200 z-50`}
+    >
       <div className="py-4 px-8 flex items-center justify-between font-mono">
         {/* Logo */}
         <div className="flex items-center gap-1 text-gray-200 text-lg font-semibold">

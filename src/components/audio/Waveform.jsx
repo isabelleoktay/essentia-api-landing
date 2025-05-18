@@ -12,7 +12,7 @@ const Waveform = ({ audioUrl, playback = true }) => {
     barWidth: 3,
     barRadius: 50,
     waveColor: "rgb(247, 248, 249)", // offwhite
-    progressColor: "rgb(209, 213, 220)", // gray-400
+    progressColor: "rgb(9, 0, 54)", // darkblue
     url: audioUrl,
   });
 

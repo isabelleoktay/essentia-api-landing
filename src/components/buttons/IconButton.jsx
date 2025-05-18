@@ -6,17 +6,18 @@ const IconButton = ({
   className,
 }) => {
   const baseClasses = `rounded-lg p-2
-    focus:outline-none transition font-mono`;
+    focus:outline-none transition font-mono hover:bg-gray-300/25`;
 
   const sizeClasses = {
-    small: `text-xs`,
-    medium: `text-base`,
-    large: `text-lg`,
-    xlarge: `text-xl`,
+    small: `text-sm`,
+    medium: `text-lg`,
+    large: `text-2xl`,
+    xlarge: `text-4xl`,
   };
 
   const colorClasses = {
-    white: "text-offwhite hover:bg-gray-300/25 hover:text-offwhite",
+    white: "text-offwhite",
+    darkblue: "text-darkblue",
   };
 
   return (
