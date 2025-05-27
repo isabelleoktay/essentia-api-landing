@@ -12,6 +12,8 @@ const ChartDisplay = ({
   title = "feature",
   topMargin = "none",
   showLegend = false,
+  xLabels,
+  baseColor,
   width = 300,
   height = 300,
   i,
@@ -43,14 +45,16 @@ const ChartDisplay = ({
         {title}
       </Intro>
       {showLegend ? (
-        <div className={`flex flex-row items-center justify-between gap-4`}>
-          <Legend data={chartData} />
-          <div className={`${baseGraphClasses}`}>
+        <div className="flex flex-row items-center justify-between gap-4">
+          <Legend data={chartData} className="flex-shrink-0" />
+          <div className="flex-grow">
             <Chart
+              baseColor={baseColor}
               data={chartData}
               width={width}
               height={height}
               className={`${topMarginClasses[topMargin]} ${chartPaddingClasses[padding]}`}
+              xLabels={xLabels}
             />
           </div>
         </div>
@@ -61,6 +65,7 @@ const ChartDisplay = ({
             width={width}
             height={height}
             className={`${topMarginClasses[topMargin]} ${chartPaddingClasses[padding]}`}
+            xLabels={xLabels}
           />
         </div>
       )}

@@ -1,7 +1,7 @@
 const Intro = ({ children, color = "black", size = "small", className }) => {
   const colorClasses = {
     white: "text-offwhite",
-    black: "bg-blueblack",
+    black: "text-blueblack",
     coral: "text-coral",
     blue: "text-brightblue",
   };

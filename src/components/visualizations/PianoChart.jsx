@@ -28,7 +28,9 @@ const PianoChart = ({ data, className }) => {
   const topPadding = 50;
 
   return (
-    <div className="flex-1 w-full h-full flex flex-col items-center justify-center p-2">
+    <div
+      className={`flex-1 w-full h-full flex flex-col items-center justify-center p-2 ${className}`}
+    >
       <div className="w-full h-full relative">
         {/* Padding spacer */}
         <div style={{ height: topPadding }} />

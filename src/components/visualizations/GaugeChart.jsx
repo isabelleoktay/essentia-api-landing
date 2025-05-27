@@ -1,11 +1,11 @@
 import { GaugeComponent } from "react-gauge-component";
 
-const GaugeChart = ({ data, width = 100, height = 150, className }) => {
+const GaugeChart = ({ data, className }) => {
   const white = "#f7f8f9";
   return (
     <GaugeComponent
       className={`${className}`}
-      style={{ width: `${width}px`, height: `${height}px` }}
+      style={{ width: "100%", height: "100%" }} // Use 100% to fill the parent container
       type="semicircle"
       id="gauge-component4"
       arc={{

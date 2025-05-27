@@ -1,13 +1,19 @@
 import { useEffect, useRef } from "react";
 import * as d3 from "d3";
+import { generateGradientColors } from "../../utils/generateGradientColors";
 
-const LayeredDonutChart = ({ data, width = 300, height = 300 }) => {
+const LayeredDonutChart = ({
+  data,
+  width = 300,
+  height = 300,
+  baseColor = "#320bff",
+}) => {
   const ref = useRef(null);
 
   useEffect(() => {
     if (!ref.current) return;
     const svg = d3.select(ref.current);
-    svg.selectAll("*").remove(); // Clear previous content
+    svg.selectAll("*").remove();
 
     const cx = width / 2;
     const cy = height / 2;
@@ -15,6 +21,13 @@ const LayeredDonutChart = ({ data, width = 300, height = 300 }) => {
     const spacing = 5;
 
     const radius = Math.min(width, height) / 2;
+
+    // Generate colors for the arcs
+    const colors = generateGradientColors(baseColor, data.length);
+    const backgroundColor = d3
+      .color(baseColor)
+      .darker(2)
+      .copy({ opacity: 0.5 });
 
     data.forEach((d, i) => {
       const outerRadius = radius - i * (ringWidth + spacing);
@@ -38,11 +51,16 @@ const LayeredDonutChart = ({ data, width = 300, height = 300 }) => {
         .append("g")
         .attr("transform", `translate(${cx}, ${cy})`);
 
-      group.append("path").attr("d", arcBackground()).attr("fill", "#6d2c38");
+      // Background arc
+      group
+        .append("path")
+        .attr("d", arcBackground())
+        .attr("fill", backgroundColor);
 
-      group.append("path").attr("d", arcValue()).attr("fill", d.color);
+      // Value arc
+      group.append("path").attr("d", arcValue()).attr("fill", colors[i]);
     });
-  }, [data, width, height]);
+  }, [data, width, height, baseColor]);
 
   return <svg ref={ref} width={width} height={height}></svg>;
 };

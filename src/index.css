@@ -4,6 +4,8 @@
   --font-sans: "Manrope", "sans-serif";
   --font-mono: "JetBrains Mono", "monospace";
 
+  --text-tiny: 0.625rem;
+
   --color-coral: oklch(0.61 0.2082 22.24); /* #e53845 */
   --color-lightcoral: oklch(0.76 0.1406 16.06); /* #fe8a93 */
   --color-offwhite: oklch(0.98 0.0017 247.84); /* #f7f8f9 */
