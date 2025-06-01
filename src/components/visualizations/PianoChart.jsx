@@ -21,7 +21,7 @@ const PianoChart = ({ data, className }) => {
   const keyW = 32;
   const keyH = 120;
   const gap = 2;
-  const highlight = data?.[0]?.scale;
+  const highlight = data?.key;
   const SVG_W = keyW * 7;
   const SVG_H = keyH;
 
@@ -81,9 +81,9 @@ const PianoChart = ({ data, className }) => {
       </div>
       <TextHighlight
         color="multigradient"
-        className="font-sans font-semibold text-offwhite text-2xl mt-2 capitalize"
+        className="font-sans font-semibold text-2xl mt-2 capitalize"
       >
-        {highlight} {data?.[0]?.key}
+        {data?.key} {data?.scale}
       </TextHighlight>
     </div>
   );

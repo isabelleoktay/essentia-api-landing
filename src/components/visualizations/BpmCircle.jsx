@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-const BpmCircle = ({ data = { bpm: 100, color: "#e53845" } }) => {
+const BpmCircle = ({ data = { bpm: 100 }, color = "#e53845" }) => {
   const [ripples, setRipples] = useState([]);
 
   // Calculate the interval for the ripple effect based on BPM
-  const rippleInterval = (60 / data[0].bpm) * 1000;
+  const rippleInterval = (60 / data.bpm) * 1000;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,7 +27,7 @@ const BpmCircle = ({ data = { bpm: 100, color: "#e53845" } }) => {
     <div
       className="relative flex items-center justify-center w-24 h-24 shrink-0 grow-0 rounded-full m-8"
       style={{
-        backgroundColor: data[0].color,
+        backgroundColor: color,
       }}
     >
       {/* Ripples */}
@@ -36,13 +36,13 @@ const BpmCircle = ({ data = { bpm: 100, color: "#e53845" } }) => {
           key={time}
           className="absolute w-full h-full aspect-square rounded-full border opacity-50 animate-[ripple_2s_ease-out]"
           style={{
-            borderColor: data[0].color,
+            borderColor: color,
           }}
         ></span>
       ))}
 
       {/* BPM Text */}
-      <span className="text-white font-bold z-10">{data[0].bpm}</span>
+      <span className="text-white font-bold z-10">{data.bpm}</span>
 
       {/* Ripple Animation */}
       <style>{`

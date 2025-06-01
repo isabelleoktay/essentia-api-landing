@@ -99,7 +99,15 @@ const RadarChart = ({
   }, [data, height, width, centerX, centerY, radius, angleSlice]);
 
   return (
-    <div style={{ position: "relative", width, height }}>
+    <div
+      style={{
+        position: "relative",
+        width,
+        height,
+        display: "block",
+        margin: "auto",
+      }}
+    >
       <svg ref={ref} width={width} height={height} />
       {showLabels &&
         labelPositions.map((d, i) => {

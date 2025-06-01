@@ -18,7 +18,7 @@ const ChartDisplay = ({
   height = 300,
   i,
 }) => {
-  const baseGraphClasses = `flex items-center justify-center h-full w-full`;
+  const baseGraphClasses = `flex flex-col items-center justify-center h-full w-full`;
 
   const topMarginClasses = {
     none: "mt-0",

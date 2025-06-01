@@ -31,7 +31,7 @@ const GaugeChart = ({ data, className }) => {
           { color: "#fe8a93" },
         ],
       }}
-      value={data[0].value}
+      value={data.value}
       labels={{
         valueLabel: {
           style: { textShadow: "none", fill: white },
